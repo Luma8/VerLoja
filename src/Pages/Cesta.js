@@ -1,8 +1,9 @@
 import React from 'react';
-import { Image, StatusBar, SafeAreaView, StyleSheet, Dimensions, Text } from 'react-native';
+import { Image, StatusBar, SafeAreaView, StyleSheet, Dimensions, Text, View } from 'react-native';
 import topo from '../../assets/topo.png'
+import logo from '../../assets/logo.png'
 
-const widht = Dimensions.get('screen').width;
+const widht = Dimensions.get('screen').width;//Ajustando Dimensão da image
 
 export default function Cesta() {
     return (
@@ -10,6 +11,15 @@ export default function Cesta() {
             <StatusBar backgroundColor={'#28B463'} />
             <Image source={topo} style={estilos.topo} />
             <Text style={estilos.titulo}>Detalhe da Cesta</Text>
+            <View style={estilos.cesta}>
+                <Text style={estilos.nome}>Cesta De Verduras</Text>
+                <View style={estilos.fazenda}>
+                    <Image source={logo} style={estilos.imagefazenda}/>
+                    <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
+                </View>
+                <Text style={estilos.descricao}>Uma Cesta com Produtos selecionados Cuidadozamente da fazenda para a cozinha</Text>
+                <Text style={estilos.preco}>R$ 40,00</Text>
+            </View>
         </SafeAreaView>
     );
 }
@@ -28,5 +38,40 @@ const estilos = StyleSheet.create({
         color: 'white',
         fontWeight: 'bold',
         padding: 16
-    }
+    },
+    cesta: {//margin
+        paddingVertical: 9,
+        paddingHorizontal: 16,
+    },
+    nome: {
+        color: '#464646',
+        fontSize: 26,
+        lineHeight: 42,
+        fontWeight: 'bold',
+    },
+    fazenda: {
+        flexDirection: 'row',
+        paddingVertical: 12,
+    },
+    imagefazenda: {
+        width: 32,
+        height: 32,
+        marginRight: 12,
+    },
+    nomeFazenda: {
+        fontSize: 16,
+        lineHeight: 26,
+    },
+    descricao: {
+        color: '#A3A3A3',
+        fontSize: 15,
+        lineHeight: 26
+    },
+    preco: {
+        color: '#2A9F85',
+        fontWeight: 'bold',
+        fontSize: 26,
+        lineHeight: 42,
+        marginTop: 8,
+    },
 });
