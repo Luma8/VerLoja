@@ -3,10 +3,10 @@ import { SafeAreaView, StyleSheet, View } from 'react-native';
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from '@expo-google-fonts/montserrat'
 import Topo from './Components/Topo';
 import Detalhes from './Components/Detalhes';
+import AppLoading from 'expo-app-loading';
 
 
-
-export default function Cesta() {
+export default function Cesta({topo, detalhes}) {
 
     const [fonteCarregada] = useFonts({
         "MontserratRegular": Montserrat_400Regular,
@@ -14,14 +14,14 @@ export default function Cesta() {
     });
 
     if (!fonteCarregada) {
-        return <View />
+        return <AppLoading />
     }
 
     return (
         <SafeAreaView>
-            <Topo />
+            <Topo {...topo} />
             <View style={estilos.cesta}>
-                <Detalhes />
+                <Detalhes {...detalhes}/>
             </View>
         </SafeAreaView>
     );

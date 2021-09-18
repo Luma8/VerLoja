@@ -5,12 +5,12 @@ import topo from '../../../../assets/topo.png';
 
 const widht = Dimensions.get('screen').width;//Ajustando Dimensão da image
 
-export default function Topo() {
+export default function Topo({ titulo }) {
     return (
         <SafeAreaView>
             <StatusBar backgroundColor={'#28B463'} />
             <Image source={topo} style={estilos.topo} />
-            <Text style={estilos.titulo}>Detalhe da Cesta</Text>
+            <Text style={estilos.titulo}>{ titulo }</Text>
         </SafeAreaView>
     );
 }

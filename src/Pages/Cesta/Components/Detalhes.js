@@ -1,17 +1,16 @@
 import React from "react";
 import { Text, View, Image, SafeAreaView, StyleSheet } from "react-native";
-import logo from '../../../../assets/logo.png'
 
-export default function Detalhes() {
+export default function Detalhes({ nome, nomeFazenda, logoFazenda, descricao, preco }) {
     return (
         <SafeAreaView>
-            <Text style={estilos.nome}>Cesta De Verduras</Text>
+            <Text style={estilos.nome}>{ nome }</Text>
             <View style={estilos.fazenda}>
-                <Image source={logo} style={estilos.imagefazenda} />
-                <Text style={estilos.nomeFazenda}>Jenny Jack Farm</Text>
+                <Image source={logoFazenda} style={estilos.imagefazenda} />
+                <Text style={estilos.nomeFazenda}>{ nomeFazenda }</Text>
             </View>
-            <Text style={estilos.descricao}>Uma Cesta com Produtos selecionados Cuidadozamente da fazenda para a cozinha</Text>
-            <Text style={estilos.preco}>R$ 40,00</Text>
+            <Text style={estilos.descricao}>{ descricao }</Text>
+            <Text style={estilos.preco}>{ preco }</Text>
         </SafeAreaView>
     );
 }
