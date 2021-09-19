@@ -10,6 +10,7 @@ const cesta = {
         nomeFazenda: "Jenny Jack Farm",
         descricao: "Uma Cesta com Produtos selecionados Cuidadozamente da fazenda para a cozinha",
         preco: "R$ 40,00",
+        botao: "Comprar",
     }
 }
 

@@ -1,16 +1,21 @@
 import React from "react";
-import { Text, View, Image, SafeAreaView, StyleSheet } from "react-native";
+import { Text, View, Image, SafeAreaView, StyleSheet, TouchableOpacity } from "react-native";
 
-export default function Detalhes({ nome, nomeFazenda, logoFazenda, descricao, preco }) {
+export default function Detalhes({ nome, nomeFazenda, logoFazenda, descricao, preco, botao }) {
     return (
         <SafeAreaView>
-            <Text style={estilos.nome}>{ nome }</Text>
+            <Text style={estilos.nome}>{nome}</Text>
             <View style={estilos.fazenda}>
                 <Image source={logoFazenda} style={estilos.imagefazenda} />
-                <Text style={estilos.nomeFazenda}>{ nomeFazenda }</Text>
+                <Text style={estilos.nomeFazenda}>{nomeFazenda}</Text>
             </View>
-            <Text style={estilos.descricao}>{ descricao }</Text>
-            <Text style={estilos.preco}>{ preco }</Text>
+            <Text style={estilos.descricao}>{descricao}</Text>
+            <Text style={estilos.preco}>{preco}</Text>
+            <TouchableOpacity style={estilos.botao}>
+                <Text style={estilos.textoBotao}>
+                    {botao}
+                </Text>
+            </TouchableOpacity>
         </SafeAreaView>
     );
 }
@@ -48,5 +53,18 @@ const estilos = StyleSheet.create({
         fontSize: 26,
         lineHeight: 42,
         marginTop: 8,
+    },
+    botao: {
+        marginTop: 16,
+        backgroundColor: '#7CECAB',
+        paddingVertical: 16,
+        borderRadius: 15,
+    },
+    textoBotao: {
+        fontSize: 20,
+        fontWeight: 'bold',
+        color: "#ffffff",
+        textAlign: 'center',
+        lineHeight: 26,
     },
 });
